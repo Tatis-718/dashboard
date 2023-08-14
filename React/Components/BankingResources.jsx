@@ -3,9 +3,7 @@ import BorrowersBlogCard from "./BorrowersBlogCard";
 import PropTypes from "prop-types";
 import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import sabioDebug from "sabio-debug";
 
-const _logger = sabioDebug.extend("BankingResources");
 function BankingResources(props) {
   const { blog } = props;
 

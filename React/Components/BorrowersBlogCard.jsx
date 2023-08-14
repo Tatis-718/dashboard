@@ -1,16 +1,10 @@
 import React from "react";
-import debug from "sabio-debug";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { Row, Col, Image } from "react-bootstrap";
 
 function BorrowersBlogCard(props) {
-  const _logger = debug.extend("BorrowersBlogs");
-
   const { blog } = props;
-
-  _logger(blog);
-
   const navigate = useNavigate();
   function onBlogClicked() {
     navigate(`/blogs/${blog.id}`, { state: props.blog });

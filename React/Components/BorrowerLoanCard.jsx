@@ -1,14 +1,9 @@
 import React from "react";
-import debug from "sabio-debug";
 import PropTypes from "prop-types";
 import { Card } from "react-bootstrap";
 
 function BorrowerLoanCard(props) {
-  const _logger = debug.extend("LoanCard");
-
   const { loan } = props;
-
-  _logger(props);
 
   return (
     <Card className="mt-2 h-50 w-50 align-center justify-content-center">

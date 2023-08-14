@@ -1,14 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import sabioDebug from "sabio-debug";
 import { Card, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-const _logger = sabioDebug.extend("BorrowersCurrentLenders");
 
 function BorrowersCurrentLenders(props) {
   const { lender } = props;
-
-  _logger("hello from borrower lenders", lender);
 
   return (
     <Col className="mx-2">

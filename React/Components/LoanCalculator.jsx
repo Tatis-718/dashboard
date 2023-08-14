@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import sabioDebug from "sabio-debug";
 import { Formik, Form, Field } from "formik";
 import { Card, Col } from "react-bootstrap";
 
 function LoanCalculator() {
-  const _LoanCalculator = sabioDebug.extend("LoanCalculator");
-
   const [calculator, setCalculator] = useState({
     amount: 0,
     months: 0,
@@ -75,11 +72,9 @@ function LoanCalculator() {
       let newCalc = { ...preveState };
 
       newCalc[nameOfField] = valueOfField;
-      _LoanCalculator(newCalc);
       return newCalc;
     });
   };
-  _LoanCalculator(calculator);
 
   return (
     <React.Fragment>

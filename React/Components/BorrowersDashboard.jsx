@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import debug from "sabio-debug";
 import { Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import dashBoardsService from "../../../services/dashboardService";
@@ -11,7 +10,6 @@ import BankingResources from "components/dashboard/borrowers/BankingResources";
 import PropTypes from "prop-types";
 import BorrowersCurrentLenders from "./BorrowersCurrentLenders";
 import creditIndicatorColors from "./creditIndicatorColors";
-const _BorrowersDash = debug.extend("BorrowersDash");
 
 function BorrowersDashboard(props) {
   const [bData, setBData] = useState({
@@ -56,7 +54,6 @@ function BorrowersDashboard(props) {
       if (response.item.files !== null) {
         uiData.files = response.item.files.pagedItems;
       }
-      _BorrowersDash("From get UI Success", response);
 
       return uiData;
     });
@@ -77,9 +74,7 @@ function BorrowersDashboard(props) {
     );
   }
 
-  const onGetUIError = (error) => {
-    _BorrowersDash("get DashboardUI error", error);
-  };
+  const onGetUIError = () => {};
 
   _BorrowersDash(currentUser, bData);
   return (
